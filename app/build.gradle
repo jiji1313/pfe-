@@ -1,0 +1,47 @@
+
+
+
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace "com.example.appTest3"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.appTest3"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':opencv49')
+
+    implementation libs.appcompat
+    implementation libs.material.v140
+    implementation libs.appcompat
+    implementation libs.opencv.android
+    implementation libs.constraintlayout.v213
+    implementation libs.opencv.android
+    testImplementation libs.junit
+    androidTestImplementation libs.junit.v113
+    androidTestImplementation libs.espresso.core.v340
+
+}
+
